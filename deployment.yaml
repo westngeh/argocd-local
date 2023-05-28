@@ -16,7 +16,7 @@ spec:
       - name: hello
         image: mylandmarktech/hello:1
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -34,7 +34,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-argo-application
+  name: myapp-argo-application
   namespace: argocd
 spec:
   project: default
@@ -45,7 +45,7 @@ spec:
     path: dev
   destination: 
     server: https://kubernetes.default.svc
-    namespace: hello
+    namespace: myapp
 
   syncPolicy:
     syncOptions:
