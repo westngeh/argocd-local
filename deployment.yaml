@@ -16,7 +16,7 @@ spec:
       - name: hello
         image: mylandmarktech/hello:1
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
